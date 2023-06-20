@@ -28,6 +28,7 @@ events.get("/", async (req, res) => {
   console.log('getAllEvents', allEvents)
   const filters = req.query;
 
+  console.log(allEvents)
   const filterEvents = allEvents.filter((event) => {
     let isValid = true;
 

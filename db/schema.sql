@@ -207,7 +207,6 @@ CREATE TABLE comments (
 
 -- rooms table schema
 
-
 -- CREATE OR REPLACE FUNCTION update_users_friends()
 -- RETURNS TRIGGER AS $$
 -- BEGIN
