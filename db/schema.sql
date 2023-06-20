@@ -130,17 +130,6 @@ CREATE TABLE users_friends(
 );
 
 
-
--- DROP TABLE IF EXISTS chats;
--- CREATE TABLE chats (
---     id SERIAL PRIMARY KEY,
---     sender_id INTEGER,
---     receiver_id INTEGER,
---     content TEXT DEFAULT NULL
--- );
-
--- rooms table schema
-
 CREATE TABLE rooms (
     id SERIAL PRIMARY KEY,
     user1_id INTEGER,
@@ -207,6 +196,16 @@ CREATE TABLE comments (
     comment VARCHAR(150) NOT NULL,
     time DATE DEFAULT CURRENT_DATE
 );
+
+-- DROP TABLE IF EXISTS chats;
+-- CREATE TABLE chats (
+--     id SERIAL PRIMARY KEY,
+--     sender_id INTEGER,
+--     receiver_id INTEGER,
+--     content TEXT DEFAULT NULL
+-- );
+
+-- rooms table schema
 
 
 -- CREATE OR REPLACE FUNCTION update_users_friends()
