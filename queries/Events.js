@@ -4,19 +4,19 @@ const getAllEvents = async () => {
   try {
     const allEvents = await db.any(`
       SELECT events.*, 
-      array_agg(json_build_object('id', categories.id, 'name', categories.name)) AS category_names,
-    array_agg(json_build_object('id', users.id, 'username', 
-      users.username, 'first_name', first_name, 'last_name', last_name, 'profile_img', users.profile_img,'age', EXTRACT(YEAR FROM AGE(CURRENT_DATE, age)) )) AS creator,
-      to_char(start_time, 'HH:MI AM') AS start_time, 
-      to_char(end_time, 'HH:MI AM') AS end_time,
-      to_char(date_created, 'YYYY-MM-DD') AS date_created, 
-      to_char(date_event, 'YYYY-MM-DD') AS date_event
-      FROM events
-      JOIN events_categories ON events.id = events_categories.event_id
-      JOIN categories ON categories.id = events_categories.category_id
-      JOIN users ON users.id = events.creator
-      GROUP BY events.id
-      HAVING count(*) > 1 OR count(events_categories.event_id) = 1;
+    //   array_agg(json_build_object('id', categories.id, 'name', categories.name)) AS category_names,
+    // array_agg(json_build_object('id', users.id, 'username', 
+    //   users.username, 'first_name', first_name, 'last_name', last_name, 'profile_img', users.profile_img,'age', EXTRACT(YEAR FROM AGE(CURRENT_DATE, age)) )) AS creator,
+    //   to_char(start_time, 'HH:MI AM') AS start_time, 
+    //   to_char(end_time, 'HH:MI AM') AS end_time,
+    //   to_char(date_created, 'YYYY-MM-DD') AS date_created, 
+    //   to_char(date_event, 'YYYY-MM-DD') AS date_event
+    //   FROM events
+    //   JOIN events_categories ON events.id = events_categories.event_id
+    //   JOIN categories ON categories.id = events_categories.category_id
+    //   JOIN users ON users.id = events.creator
+    //   GROUP BY events.id
+    //   HAVING count(*) > 1 OR count(events_categories.event_id) = 1;
     `);
     console.log('query', allEvents)
     return allEvents;
