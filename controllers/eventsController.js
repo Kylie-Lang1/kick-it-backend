@@ -24,6 +24,7 @@ events.use("/:eventId/comments", comm)
 //! GET ALL EVENTS
 events.get("/", async (req, res) => {
   const allEvents = await getAllEvents();
+  console.log('getAllEvents', allEvents)
   const filters = req.query;
 
   const filterEvents = allEvents.filter((event) => {
