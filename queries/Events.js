@@ -2,7 +2,7 @@ const db = require("../db/dbConfig")
 
 const getAllEvents = async () => {
   try {
-    const allEvents = await db.manyOrNone(`
+    const allEvents = await db.any(`
       SELECT events.*, 
       array_agg(json_build_object('id', categories.id, 'name', categories.name)) AS category_names,
     array_agg(json_build_object('id', users.id, 'username', 
@@ -18,6 +18,7 @@ const getAllEvents = async () => {
       GROUP BY events.id
       HAVING count(*) > 1 OR count(events_categories.event_id) = 1;
     `);
+    console.log('query', allEvents)
     return allEvents;
   } catch (error) {
     console.log(error)
