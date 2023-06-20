@@ -27,7 +27,13 @@ VALUES
     ('Sophia', 'Wilson', '1996-01-25', 'sophiawilson', 'sophiawilson@example.com', 'She/Her', 'Truly passionate about conservation and striving to make our world a greener place.', 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80', 'firebase_id_sophiawilson'),
     ('Matthew', 'Jones', '1990-04-05', 'matthewjones', 'matthewjones@example.com', 'He/Him', 'Software engineer building connections in the industry. Seeking collaborations and networking opportunities to fuel innovation.', 'https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80', 'firebase_id_matthewjones'),
     ('Emma', 'Martinez', '1991-07-15', 'emmamartinez', 'emmamartinez@example.com', 'She/Her', 'Digital artist eager to get out and get fit through sports.', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80', 'firebase_id_emmamartinez'),
-    ('Andrew', 'Clark', '1988-09-20', 'andrewclark', 'andrewclark@example.com', '', 'Family-oriented, but looking for new buddies with similar values to share a cold beer and catch a game', 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80', 'firebase_id_andrewclark');
+    ('Andrew', 'Clark', '1988-09-20', 'andrewclark', 'andrewclark@example.com', '', 'Family-oriented, but looking for new buddies with similar values to share a cold beer and catch a game', 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80', 'firebase_id_andrewclark'),
+    ('Kylie', 'Lang', '1997-03-05', 'kylie.lang', 'kylielang@example.com', 'She/Her', 'About Me', 'https://cdn.vectorstock.com/i/1000x1000/72/90/female-avatar-profile-icon-round-woman-face-vector-18307290.webp', 'firebase_id_kylielang'),
+    ('Fadila', 'Ali', '1995-06-10', 'fadila.ali', 'fadilaali@example.com', '', 'About Me', 'https://as2.ftcdn.net/v2/jpg/03/14/99/51/1000_F_314995182_YnQoHsW8lGnReiaX21CvPZk5Qjh1SE4q.jpg', 'firebase_id_fadilaali'),
+    ('Tony', 'Hoang', '1997-12-20', 'tony.hoang', 'tonyhoang@example.com', '', 'About Me', 'https://img.freepik.com/premium-vector/man-avatar-profile-round-icon_24640-14044.jpg?w=1060', 'firebase_id_tonyhoang'),
+    ('Daniel', 'Rodriguez', '1998-07-11', 'daniel.rodriguez', 'daniel.rodriguez@example.com', '', 'About Me', 'https://cdn.icon-icons.com/icons2/2643/PNG/512/male_people_avatar_man_boy_curly_hair_icon_159362.png', 'firebase_id_danielrodriguez'),
+    ('Chris', 'King', '1995-02-14', 'chris.king', 'chrisking@example.com', 'He/Him', 'About Me', 'https://cdn0.iconfinder.com/data/icons/diverse-cartoon-men-avatars/300/28-1024.png', 'firebase_id_chrisking');
+
 
 INSERT INTO events (title, date_created, date_event, summary, max_people, age_restriction, age_min, age_max, location, address, start_time, end_time, creator, location_image)
 VALUES
@@ -38,8 +44,8 @@ VALUES
     ('Yoga in the Park', '2023-06-12', '2023-06-25', 'Join us for a relaxing yoga session in the park. All skill levels are welcome! Please bring your own yoga mat and water bottles', 20, false, 0, 0, 'Juniper Valley Park', 'Juniper Valley Park', '10:00:00', '12:00:00', 5, 'https://www.theyogatrail.com/uploads/1/0/2/6/10266880/9609734_orig.jpg'),
     ('Hiking Adventure', '2023-06-12', '2023-07-20', 'Embark on an exciting hiking adventure and explore the scenic trails of our local mountains.', 12, false, 0, 0, 'Bear Mountain', 'Bear Mountain State Park', '09:00:00', '14:00:00', 6, 'https://cdn.tourradar.com/s3/content-pages/2319/1200x630/m4AFYm.jpg'),
     ('Barcade Beer Night', '2023-06-12', '2023-07-02', 'Getting a group together to visit barcade. Bar and arcade all in one. Enjoy half off beers this night.', 9, true, 21, 40, 'Barcade Brooklyn', '388 Union Ave, Brooklyn, NY 11211', '20:00:00', '23:00:00', 9, 'https://ca-times.brightspotcdn.com/dims4/default/5018de6/2147483647/strip/false/crop/1860x1241+0+0/resize/839x560!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F0c%2Fb9%2F8a8fec604b149e4edfe3f87063be%2Fwk-best-barcades-barcade.jpg'),
-    ('Village Game Night', '2023-06-12', '2023-07-18', 'Come play some board games, sip hot chocolate and grab some snacks with us.', 8, false, 0, 0, 'The Uncommons', '230 Thompson St, New York, NY 10012', '13:00:00', '16:00:00', 8, 'https://media.timeout.com/images/105611246/1920/1080/image.jpg'),
     ('Game Night in LI', '2023-06-12', '2023-06-28', 'Enjoy your favorite board games including Monopoly, Dungeons & Dragons and many more!', 22, false, 0, 0, 'Main Street Board Game Cafe', '307 Main Street Huntington, NY', '15:00:00', '18:00:00', 13, 'https://images.squarespace-cdn.com/content/v1/5b7ad2547e3c3a66e04ae459/1563484866281-3H3N35YEZJ5UF5PGBOU4/AEA750F5-B6A2-4A44-A456-23D12ACE5B64.JPG?format=1000w'),
+    ('Village Game Night', '2023-06-12', '2023-07-18', 'Come play some board games, sip hot chocolate and grab some snacks with us.', 8, false, 0, 0, 'The Uncommons', '230 Thompson St, New York, NY 10012', '13:00:00', '16:00:00', 8, 'https://media.timeout.com/images/105611246/1920/1080/image.jpg'),
     ('Coney Island Clean Up', '2023-06-12', '2023-07-23', 'Help a group of volunteers clean the beach this summer. Find a team member at the Luna Park boardwalk entrance.', 40, false, 0, 0, 'Coney Island', '1000 Surf Ave, Brooklyn, NY', '10:00:00', '15:00:00', 10, 'https://beaches.lacounty.gov/wp-content/uploads/2016/10/BeachCleaning.jpg'),
     ('Paint and Sip', '2023-06-12', '2023-08-14', 'Hosting an outdoor paint and sip at Prospect Park. Please RSVP and venmo $20 to @sarahdavis for supplies. Refundable up to 5 days before the event.', 20, true, 21, 45, 'Prospect Park', 'Prospect Park', '14:00:00', '18:00:00', 4, 'https://media.timeout.com/images/104097116/1920/1080/image.jpg'),
     ('Hackathon', '2023-06-12', '2023-09-08', 'Looking for up to 8 members to join my hackathon team. All skill levels welcome. Sign on from anywhere as this ia a virtual event', 8, false, 0, 0, 'Anywhere', 'NYC', '10:00:00', '22:00:00', 11, 'https://cdn-facpg.nitrocdn.com/OusIzrOrgAhkXofPVQIPbIcDPXRbbpOc/assets/images/optimized/rev-8388110/wp-content/uploads/2022/03/How-do-hackathons-work.png');
@@ -130,14 +136,21 @@ VALUES
     (13, 10, true),
     (13, 11, true);
 
--- INSERT INTO users_events (users_id, event_id, title, date_event, location, address, location_image, interested, rsvp, selected, added)
--- VALUES 
---     (1 , 5 , 'Yoga in the Park', 'June 25, 2023', 'Juniper Valley Park', 'Juniper Valley Park', 'url for the image', FALSE, TRUE , FALSE, TRUE),
---     (1 , 5 , 'Yoga in the Park', 'June 25, 2023', 'Juniper Valley Park', 'Juniper Valley Park', 'url for the image', FALSE, TRUE , FALSE, TRUE),
+INSERT INTO users_events (users_id, event_id, title, date_event, location, address, location_image, interested, rsvp, selected, added)
+VALUES 
+    (4, 9, 'Village Game Night', 'July 18, 2023', 'The Uncommons', '230 Thompson St, New York, NY 10012', 'https://media.timeout.com/images/105611246/1920/1080/image.jpg', FALSE, TRUE , FALSE, TRUE);
 
+INSERT INTO users_friends (users_id, friends_id)
+VALUES
+    (4, 6),
+    (4, 7),
+    (4, 9),
+    (4, 10),
+    (4, 12),
+    (4, 8);
 
-INSERT INTO users (first_name, last_name, age, username, email, profile_img, firebase_id)VALUES 
-('John', 'Doe', '09/10/1998', 'johndoe', 'johndoe@example.com', 'https://example.com/profile1.jpg', '100')
+-- INSERT INTO users (first_name, last_name, age, username, email, profile_img, firebase_id)VALUES 
+-- ('John', 'Doe', '09/10/1998', 'johndoe', 'johndoe@example.com', 'https://example.com/profile1.jpg', '100')
 
 
 -- For testing
