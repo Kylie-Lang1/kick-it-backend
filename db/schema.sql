@@ -164,28 +164,6 @@ CREATE TABLE message (
 
 
 
--- CREATE OR REPLACE FUNCTION update_users_friends()
--- RETURNS TRIGGER AS $$
--- BEGIN
---     IF TG_OP = 'UPDATE' THEN
---         UPDATE users_friends
---         SET
---             first_name = NEW.first_name,
---             last_name = NEW.last_name,
---             pronouns = NEW.pronouns,
---             profile_img = NEW.profile_img
---         WHERE users_id = OLD.id;
---     END IF;
---     RETURN NEW;
--- END;
--- $$ LANGUAGE plpgsql;
-
--- CREATE TRIGGER update_users_friends_trigger
--- AFTER UPDATE ON users
--- FOR EACH ROW
--- EXECUTE FUNCTION update_users_friends();
-
-
 CREATE OR REPLACE FUNCTION update_users_friends()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -229,3 +207,25 @@ CREATE TABLE comments (
     comment VARCHAR(150) NOT NULL,
     time DATE DEFAULT CURRENT_DATE
 );
+
+
+-- CREATE OR REPLACE FUNCTION update_users_friends()
+-- RETURNS TRIGGER AS $$
+-- BEGIN
+--     IF TG_OP = 'UPDATE' THEN
+--         UPDATE users_friends
+--         SET
+--             first_name = NEW.first_name,
+--             last_name = NEW.last_name,
+--             pronouns = NEW.pronouns,
+--             profile_img = NEW.profile_img
+--         WHERE users_id = OLD.id;
+--     END IF;
+--     RETURN NEW;
+-- END;
+-- $$ LANGUAGE plpgsql;
+
+-- CREATE TRIGGER update_users_friends_trigger
+-- AFTER UPDATE ON users
+-- FOR EACH ROW
+-- EXECUTE FUNCTION update_users_friends();
