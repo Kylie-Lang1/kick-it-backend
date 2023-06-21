@@ -10,4 +10,14 @@ const getAllCategories = async () => {
     }
 }
 
-module.exports={getAllCategories}
+const getCategories = async (id) => {
+    try{
+        const allCategories = await db.one('SELECT * FROM categories WHERE id=$1', id)
+        return allCategories
+    }
+    catch(error){
+        return error
+    }
+}
+
+module.exports={getAllCategories , getCategories}
