@@ -2,10 +2,10 @@ const db = require("../db/dbConfig")
 
 const getAllEvents = async () => {
   try {
-    const allEvents = await db.manyOrNone(`
+    const allEvents = await db.any(`
       SELECT events.*, 
       array_agg(json_build_object('id', categories.id, 'name', categories.name)) AS category_names,
-    array_agg(json_build_object('id', users.id, 'username', 
+      array_agg(json_build_object('id', users.id, 'username', 
       users.username, 'first_name', first_name, 'last_name', last_name, 'profile_img', users.profile_img,'age', EXTRACT(YEAR FROM AGE(CURRENT_DATE, age)) )) AS creator,
       to_char(start_time, 'HH:MI AM') AS start_time, 
       to_char(end_time, 'HH:MI AM') AS end_time,

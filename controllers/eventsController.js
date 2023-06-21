@@ -23,9 +23,12 @@ events.use("/:eventId/comments", comm)
 
 //! GET ALL EVENTS
 events.get("/", async (req, res) => {
+  console.log('i het the events get route')
   const allEvents = await getAllEvents();
+  console.log('getAllEvents', allEvents)
   const filters = req.query;
 
+  console.log(allEvents)
   const filterEvents = allEvents.filter((event) => {
     let isValid = true;
 

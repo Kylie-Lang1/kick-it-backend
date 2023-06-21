@@ -130,17 +130,6 @@ CREATE TABLE users_friends(
 );
 
 
-
--- DROP TABLE IF EXISTS chats;
--- CREATE TABLE chats (
---     id SERIAL PRIMARY KEY,
---     sender_id INTEGER,
---     receiver_id INTEGER,
---     content TEXT DEFAULT NULL
--- );
-
--- rooms table schema
-
 CREATE TABLE rooms (
     id SERIAL PRIMARY KEY,
     user1_id INTEGER,
@@ -162,28 +151,6 @@ CREATE TABLE message (
      date_created DATE DEFAULT CURRENT_DATE
 );
 
-
-
--- CREATE OR REPLACE FUNCTION update_users_friends()
--- RETURNS TRIGGER AS $$
--- BEGIN
---     IF TG_OP = 'UPDATE' THEN
---         UPDATE users_friends
---         SET
---             first_name = NEW.first_name,
---             last_name = NEW.last_name,
---             pronouns = NEW.pronouns,
---             profile_img = NEW.profile_img
---         WHERE users_id = OLD.id;
---     END IF;
---     RETURN NEW;
--- END;
--- $$ LANGUAGE plpgsql;
-
--- CREATE TRIGGER update_users_friends_trigger
--- AFTER UPDATE ON users
--- FOR EACH ROW
--- EXECUTE FUNCTION update_users_friends();
 
 
 CREATE OR REPLACE FUNCTION update_users_friends()
@@ -229,3 +196,34 @@ CREATE TABLE comments (
     comment VARCHAR(150) NOT NULL,
     time DATE DEFAULT CURRENT_DATE
 );
+
+-- DROP TABLE IF EXISTS chats;
+-- CREATE TABLE chats (
+--     id SERIAL PRIMARY KEY,
+--     sender_id INTEGER,
+--     receiver_id INTEGER,
+--     content TEXT DEFAULT NULL
+-- );
+
+-- rooms table schema
+
+-- CREATE OR REPLACE FUNCTION update_users_friends()
+-- RETURNS TRIGGER AS $$
+-- BEGIN
+--     IF TG_OP = 'UPDATE' THEN
+--         UPDATE users_friends
+--         SET
+--             first_name = NEW.first_name,
+--             last_name = NEW.last_name,
+--             pronouns = NEW.pronouns,
+--             profile_img = NEW.profile_img
+--         WHERE users_id = OLD.id;
+--     END IF;
+--     RETURN NEW;
+-- END;
+-- $$ LANGUAGE plpgsql;
+
+-- CREATE TRIGGER update_users_friends_trigger
+-- AFTER UPDATE ON users
+-- FOR EACH ROW
+-- EXECUTE FUNCTION update_users_friends();
