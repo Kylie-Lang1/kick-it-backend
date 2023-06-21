@@ -1,7 +1,7 @@
 const express = require("express");
 const categories = express.Router();
 
-const { getAllCategories } = require("../queries/Categories");
+const { getAllCategories , getCategories } = require("../queries/Categories");
 
 //! GET ALL CATEGORIES
 categories.get("/", async (req, res) => {
@@ -13,5 +13,18 @@ categories.get("/", async (req, res) => {
     }
 });
 
+
+categories.get("/:id", async(req , res) => {
+    const {id} = req.params
+
+    const category = await getCategories(id)
+
+    if(!category.message){
+        res.json(category)
+    }
+    else {
+        res.status(500).json({ error: "Category not found!"});
+    }
+})
 
 module.exports = categories
